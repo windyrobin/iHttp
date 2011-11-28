@@ -24,7 +24,7 @@ server.listen(ADDRESS, PORT, BACK_LOG);
 ```
   
 ####Benchmark
-  Compared with Node's classic "hello,world" 
+  Compared with Node's classical "hello,world" 
   
     siege -c 50 -r 10000 -b XXX:3459/
 

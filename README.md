@@ -38,7 +38,7 @@ server.listen(ADDRESS, PORT, BACK_LOG);
     >Transaction rate:      11248.59 trans/sec
 
     
-####NOTE
+####Note
   
   This's just an experiment , maybe there are some bugs,   
 if you want to use it in production ,you *SHOULD* consider it seriously...

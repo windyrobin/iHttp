@@ -27,7 +27,7 @@ function IHttpServer(cb){
 IHttpServer.prototype.listen = function(addr, port, backLog){
   addr = addr || ADDRESS;
   port = port || PORT;
-  backLog = backLog || BACK_LOg;
+  backLog = backLog || BACK_LOG;
   
   var handle = new TCP();
   handle.bind(addr, port);

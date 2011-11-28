@@ -10,7 +10,7 @@ function debug(str){
   //console.log(str);
 }
 
-//var ADDRESS = "127.0.0.1";
+//var ADDRESS = '127.0.0.1';
 var ADDRESS = '0.0.0.0';
 var PORT = 3458;
 var BACK_LOG = 128;
@@ -85,7 +85,7 @@ function ServerResponse(sock){
 }
 
 var CRLF = '\r\n';
-var STATUS_CODES = require("http").STATUS_CODES;
+var STATUS_CODES = require('http').STATUS_CODES;
 
 ServerResponse.prototype.writeHead = function(statusCode , headers){
   this._statusCode = statusCode;

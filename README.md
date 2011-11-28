@@ -26,7 +26,7 @@ server.listen(ADDRESS, PORT, BACK_LOG);
 ####Benchmark
   Compared with Node's classic "hello,world" 
   
-    siege -c 50 -r 10000 -b edp2.sqa.cm4:3459/
+    siege -c 50 -r 10000 -b XXX:3459/
 
 - origin :
 

@@ -1,6 +1,6 @@
-var net = require("net");
-var cp = require("child_process");
-var TCP = process.binding("tcp_wrap").TCP;
+var net = require('net');
+var cp = require('child_process');
+var TCP = process.binding('tcp_wrap').TCP;
 
 function main(fn){
   fn();
@@ -60,7 +60,6 @@ function onconnection(handle){
   socket.resume();
   self.connections++;
   socket.server = self;
-  socket.emit("connect");
 
   socket.setTimeout(2 * 60 * 1000); // 2 minute timeout
   socket.addListener('timeout', function() {
@@ -141,7 +140,7 @@ function ServerRequest(sock){
 }  
 
 ServerRequest.prototype.parseHeader = function(buffer){
-  debug("parseHeader ");
+  debug('parseHeader');
   var lines = buffer.toString();
   lines = lines.trimRight().split(CRLF);
 
@@ -165,7 +164,6 @@ ServerRequest.prototype.parseHeader = function(buffer){
 }
 
 IHttpServer.prototype.genReqRes = function (sock, buffer){
-  debug("gen req res");
   var res = new ServerResponse(sock);
   var req = new ServerRequest(sock);
   var isOK = false;
@@ -173,8 +171,8 @@ IHttpServer.prototype.genReqRes = function (sock, buffer){
   //only GET method is supported
   try{
     req.parseHeader(buffer);
-    if(req.method != "GET"){
-      debug("method not allowed" + req.method);
+    if(req.method != 'GET'){
+      debug('method not allowed' + req.method);
       //method not allowed
       res.writeHead(405);
       res.end();
@@ -183,7 +181,7 @@ IHttpServer.prototype.genReqRes = function (sock, buffer){
     }
   }catch(err){
     //bad request
-    debug(err + "bad request");
+    debug(err + 'bad request');
     res.writeHead(400);
     res.end();
   }
